@@ -42,5 +42,5 @@ plt.show()
 lin_reg.predict([[6.5]])
 
 #predicting using polynomial regression
-lin_reg2.predict([[1,6.5,6.5**2,6.5**3,6.5**4]])
+lin_reg2.predict(poly_reg.fit_transform([[6.5]]))
 
