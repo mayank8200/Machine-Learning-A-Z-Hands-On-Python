@@ -14,7 +14,7 @@ y = dataset.iloc[:, -1].values
 
 
 #predicting using polynomial regression
-regressor.predict([[1,6.5,6.5**2,6.5**3,6.5**4]])
+y_pred=regressor.predict([[6.5]])
 
 #Visualising the regression
 plt.scatter(X,y,color="Red")
