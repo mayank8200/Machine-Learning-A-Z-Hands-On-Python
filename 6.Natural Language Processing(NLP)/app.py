@@ -36,7 +36,7 @@ def predict():
     if output[0] == 0:
         text = "Negative Feedback"
     else:
-        text = "Positivee Feedback"
+        text = "Positive Feedback"
         
     
 
