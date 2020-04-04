@@ -67,3 +67,7 @@ classifier.fit_generator(training_set,
                          nb_epoch = 25,
                          validation_data = test_set,
                          nb_val_samples = 2000)
+
+
+
+
