@@ -32,7 +32,7 @@ regressor.fit(X_train,y_train)
 y_pred=regressor.predict(X_test)
 
 #Using backward elimination to find optimal model
-import statsmodels.regression.linear_model as sm
+import statsmodels.api as sm
 #creating a matrix of ones as constant b0 because it isn't provided by the library
 X = np.append(arr=np.ones((50,1)).astype(int),values=X,axis=1)
 #selecting all the features and check p value with 0.05
