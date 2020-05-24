@@ -47,8 +47,23 @@ y_pred = classifier.predict(X_test)
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
-# save the model to disk
+com = "You voice is not clear"
+review = re.sub('[^a-zA-Z]', ' ', com)
+review = review.lower()
+review = review.split()
+ps = PorterStemmer()
+review = [ps.stem(word) for word in review if not word in set(stopwords.words('english'))]
+review = ' '.join(review)
+corpus.append(review)
+X = cv.fit_transform(corpus).toarray()
+output = classifier.predict([X[-1]])
+if output[0] == 0:
+    text = "Negative Feedback"
+else:
+    text = "Positive Feedback"
+print(text)
+'''# save the model to disk
 filename = 'model.pkl'
 pickle.dump(classifier, open(filename, 'wb'))
 pickle.dump(cv, open('cv.pkl', 'wb'))
-pickle.dump(corpus, open('corpus.pkl', 'wb'))
+pickle.dump(corpus, open('corpus.pkl', 'wb'))'''
